@@ -1,0 +1,10 @@
+# Write your default config options here!
+
+vo=x11
+zoom=1
+double=yes
+spuaa=4
+spualign=-1
+#nokeepaspect=1
+noaspect=1
+noautoexpand=1
