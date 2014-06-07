@@ -9,16 +9,10 @@ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 vim +BundleInstall +qall
 
 #mplayer conf
-ln -s ~/dotfiles/mplayer ~/.mplayer/config
 
 #Xressources
-ln -s ~/dotfiles/Xressources ~/.Xressources
 
 #xinit
-ln -s ~/dotfiles/xinitrc ~/.xinitrc
-
 #bashrc
-ln -s ~/dotfiles/bashrc ~/.bashrc
 
 #.config
-ln -s ~/dotfiles/.config ~/.config
