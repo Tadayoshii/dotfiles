@@ -36,6 +36,8 @@ Bundle 'spf13/vim-autoclose'
 Bundle 'godlygeek/tabular'
 Bundle 'majutsushi/tagbar'
 Bundle 'chriskempson/base16-vim'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'tomasr/molokai'
 
 filetype plugin indent on
 
@@ -80,7 +82,4 @@ let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 
 set t_Co=256
 
-
-
-
-
+set background=dark
