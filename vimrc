@@ -78,7 +78,7 @@ let g:airline#extensions#tabline#enabled=1
 
 let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 
-
+set t_Co=256
 
 
 
