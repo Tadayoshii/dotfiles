@@ -41,9 +41,13 @@ Bundle 'tomasr/molokai'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
 Bundle 'ervandew/supertab'
+"Bundle 'SirVer/ultisnips'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'honza/vim-snippets'
+Bundle 'moll/vim-node'
+Bundle 'jamescarr/snipmate-nodejs'
+Bundle 'ahayman/vim-nodejs-complete'
 
 filetype plugin indent on
 
@@ -94,3 +98,11 @@ colorscheme molokai
 
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 let g:ycm_path_to_python_interpreter = '/usr/bin/python'
+
+let g:ycm_key_list_select_completion = ['<C-TAB>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-S-TAB>', '<Up>']
+
+"let SuperTabDefaultCompletionType = '<C-Tab>'
+"let g:UltiSnipsExpandTrigger="<c-s>"
+"let g:UltiSnipsJumpForwardTrigger="<c-s>"
+"let g:UltiSnipsJumpBackwardTrigger="<s-s>"
