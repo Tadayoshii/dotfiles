@@ -38,6 +38,12 @@ Bundle 'majutsushi/tagbar'
 Bundle 'chriskempson/base16-vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tomasr/molokai'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
+Bundle 'honza/vim-snippets'
+Bundle 'ervandew/supertab'
+Bundle 'Valloric/YouCompleteMe'
 
 filetype plugin indent on
 
@@ -81,5 +87,10 @@ let g:airline#extensions#tabline#enabled=1
 let g:ycm_path_to_python_interpreter = '/usr/bin/python'
 
 set t_Co=256
-
 set background=dark
+
+let g:airline_theme='powerlineish'
+colorscheme molokai
+
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
+let g:ycm_path_to_python_interpreter = '/usr/bin/python'
