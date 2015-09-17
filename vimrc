@@ -27,17 +27,16 @@ if has('autocmd')
 endif
 
 if has('gui_running')
-    set guioptions-=m  "remove menu bar
-    set guioptions-=T  "remove toolbar
-    set guioptions-=r  "remove right-hand scroll bar
-    set guioptions-=L  "remove left-hand scroll bar
-    set background=light
+	set guioptions-=m  "remove menu bar
+	set guioptions-=T  "remove toolbar
+	set guioptions-=r  "remove right-hand scroll bar
+	set guioptions-=L  "remove left-hand scroll bar
+	set background=light
 	set guifont=Mensch:h10
 else
     set background=dark
 endif
 
-set font=Mensch:h10
 Bundle 'gmarik/vundle'
 
 Bundle 'tpope/vim-fugitive'
@@ -65,6 +64,7 @@ Bundle 'honza/vim-snippets'
 Bundle 'moll/vim-node'
 Bundle 'jamescarr/snipmate-nodejs'
 Bundle 'ahayman/vim-nodejs-complete'
+Bundle 'kien/ctrlp.vim'
 
 filetype plugin indent on
 
@@ -86,6 +86,9 @@ nnoremap <C-j> }
 nnoremap <C-k> {
 nnoremap <space> zz
 
+vnoremap <C-j> }
+vnoremap <C-k> {
+
 nnoremap <F5> :make<CR>
 nnoremap <F9> :cp<CR>
 nnoremap <F10> :cn<CR>
@@ -93,7 +96,6 @@ nnoremap <F10> :cn<CR>
 function! DefInSecondWindow()
 	let wordUnderCursor = expand("<cword>")
 	exe ":norm! \<C-w>w"
-	silent!
 	try
 		exec("tag ".wordUnderCursor)
 	catch
@@ -106,8 +108,8 @@ nnoremap <silent><leader>s :call DefInSecondWindow()<CR>
 
 let g:airline_powerline_fonts=0
 let g:airline#extensions#tabline#enabled=0
-"let g:airline#extensions#tabline#left_sep = '»'
-"let g:airline#extensions#tabline#left_alt_sep = '»'
+let g:airline#extensions#tabline#left_sep = '»'
+let g:airline#extensions#tabline#left_alt_sep = '»'
 
 "let g:neocomplcache_enable_smart_case = 1
 
@@ -143,4 +145,4 @@ colorscheme solarized
 "
 set lines=1000
 set columns=1000
-set fullscreen enabled
+let g:autoclose_on = 0
