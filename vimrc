@@ -1,8 +1,40 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/vundle'
+
+Plugin 'tpope/vim-fugitive'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'bling/vim-airline'
+Plugin 'mbbill/undotree'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'Shougo/neocomplcache'
+Plugin 'scrooloose/syntastic'
+Plugin 'spf13/vim-autoclose'
+"Plugin 'godlygeek/tabular'
+Plugin 'majutsushi/tagbar'
+Plugin 'chriskempson/base16-vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tomasr/molokai'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+"Plugin 'ervandew/supertab'
+"Plugin 'SirVer/ultisnips'
+"Plugin 'Valloric/YouCompleteMe'
+Plugin 'honza/vim-snippets'
+Plugin 'moll/vim-node'
+Plugin 'jamescarr/snipmate-nodejs'
+Plugin 'ahayman/vim-nodejs-complete'
+Plugin 'kien/ctrlp.vim'
+Plugin 'morhetz/gruvbox'
+call vundle#end()
+filetype plugin indent on
 
 set background=dark
 set hidden
@@ -32,53 +64,22 @@ if has('gui_running')
 	set guioptions-=r  "remove right-hand scroll bar
 	set guioptions-=L  "remove left-hand scroll bar
 	set background=light
-	set guifont=Mensch:h10
+	set guifont=Mensch\ 11
 else
     set background=dark
 endif
-
-Bundle 'gmarik/vundle'
-
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'bling/vim-airline'
-Bundle 'mbbill/undotree'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-surround'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'Shougo/neocomplcache'
-Bundle 'scrooloose/syntastic'
-Bundle 'spf13/vim-autoclose'
-"Bundle 'godlygeek/tabular'
-Bundle 'majutsushi/tagbar'
-Bundle 'chriskempson/base16-vim'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'tomasr/molokai'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
-"Bundle 'ervandew/supertab'
-"Bundle 'SirVer/ultisnips'
-"Bundle 'Valloric/YouCompleteMe'
-Bundle 'honza/vim-snippets'
-Bundle 'moll/vim-node'
-Bundle 'jamescarr/snipmate-nodejs'
-Bundle 'ahayman/vim-nodejs-complete'
-Bundle 'kien/ctrlp.vim'
-
-filetype plugin indent on
 
 let mapleader = "<"
 
 "Fix for airline not showing up
 set laststatus=2
+set ttimeoutlen=50
 
 nnoremap <Leader>l gt
 nnoremap <Leader>h gT
 
 nnoremap <Leader>j :bn<CR> 
 nnoremap <Leader>k :bp<CR>
-
 
 :nnoremap <silent><Leader>d <C-]>
 
@@ -106,7 +107,7 @@ endfunction
 
 nnoremap <silent><leader>s :call DefInSecondWindow()<CR>
 
-let g:airline_powerline_fonts=0
+let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=0
 let g:airline#extensions#tabline#left_sep = '»'
 let g:airline#extensions#tabline#left_alt_sep = '»'
@@ -134,8 +135,8 @@ let g:airline#extensions#tabline#left_alt_sep = '»'
 set t_Co=256
 set background=dark
 
-let g:airline_theme='solarized'
-colorscheme solarized
+let g:airline_theme='gruvbox'
+colorscheme gruvbox 
 
 
 "let SuperTabDefaultCompletionType = '<C-Tab>'
