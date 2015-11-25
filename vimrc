@@ -33,6 +33,7 @@ Plugin 'jamescarr/snipmate-nodejs'
 Plugin 'ahayman/vim-nodejs-complete'
 Plugin 'kien/ctrlp.vim'
 Plugin 'morhetz/gruvbox'
+Plugin 'peterhoeg/vim-qml'
 call vundle#end()
 filetype plugin indent on
 
@@ -81,7 +82,7 @@ nnoremap <Leader>h gT
 nnoremap <Leader>j :bn<CR> 
 nnoremap <Leader>k :bp<CR>
 
-:nnoremap <silent><Leader>d <C-]>
+nnoremap <silent><Leader>d <C-]>
 
 nnoremap <C-j> }
 nnoremap <C-k> {
@@ -108,9 +109,9 @@ endfunction
 nnoremap <silent><leader>s :call DefInSecondWindow()<CR>
 
 let g:airline_powerline_fonts=1
-let g:airline#extensions#tabline#enabled=0
-let g:airline#extensions#tabline#left_sep = '»'
-let g:airline#extensions#tabline#left_alt_sep = '»'
+let g:airline#extensions#tabline#enabled=1
+"let g:airline#extensions#tabline#left_sep = '»'
+"let g:airline#extensions#tabline#left_alt_sep = '»'
 
 "let g:neocomplcache_enable_smart_case = 1
 
@@ -147,3 +148,4 @@ colorscheme gruvbox
 set lines=1000
 set columns=1000
 let g:autoclose_on = 0
+nmap <c-f> :CtrlPTag<cr>
