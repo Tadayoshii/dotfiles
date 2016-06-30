@@ -7,7 +7,8 @@ echo -e "Setting up vim"
 #TODO: Add as submodule not plain git it here
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 #git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/vundle
-cp vimrc ~/.vimrc
+#cp vimrc ~/.vimrc
+ln -L $HOME/dotfiles/vimrc $HOME/.vimrc
 vim +PluginInstall +qall
 #sh ~/.vim/bundle/YouCompleteMe/install.sh
 #cp libclang.so ~/.vim/bundle/YouCompleteMe/third_party/ycmd/libclang.so
