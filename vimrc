@@ -1,8 +1,13 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+if has("win32") || has("win16")
+	set rtp+=$HOME/vimfiles/bundle/Vundle.vim/
+	call vundle#begin('$USERPROFILE/vimfiles/bundle/')
+else
+	set rtp+=~/.vim/bundle/Vundle.vim
+	call vundle#begin()
+endif
 
 Plugin 'gmarik/vundle'
 
@@ -34,6 +39,7 @@ Plugin 'ahayman/vim-nodejs-complete'
 Plugin 'kien/ctrlp.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'peterhoeg/vim-qml'
+Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()
 filetype plugin indent on
 
@@ -65,7 +71,11 @@ if has('gui_running')
 	set guioptions-=r  "remove right-hand scroll bar
 	set guioptions-=L  "remove left-hand scroll bar
 	set background=light
-	set guifont=Mensch\ 11
+	if has("gui_gtk2")
+		set guifont=Mensch\ 11
+	elseif has("gui_win32")
+		set guifont=Mensch:h10:cANSI
+	endif
 else
     set background=dark
 endif
@@ -136,9 +146,10 @@ let g:airline#extensions#tabline#enabled=1
 set t_Co=256
 set background=dark
 
-let g:airline_theme='gruvbox'
-colorscheme gruvbox 
-
+let g:airline_theme='base16'
+let base16colorspace=256  " Access colors present in 256 colorspace
+colorscheme base16-ashes
+set backspace=indent,eol,start
 
 "let SuperTabDefaultCompletionType = '<C-Tab>'
 "let g:UltiSnipsExpandTrigger="<c-s>"
