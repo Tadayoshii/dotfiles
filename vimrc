@@ -9,11 +9,9 @@ else
 	call vundle#begin()
 endif
 
-Plugin 'gmarik/vundle'
-
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'bling/vim-airline'
+"Plugin 'bling/vim-airline'
 Plugin 'mbbill/undotree'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
@@ -40,6 +38,9 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'morhetz/gruvbox'
 Plugin 'peterhoeg/vim-qml'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'pangloss/vim-javascript'
+Plugin 'jacoborus/tender.vim'
+Plugin 'itchyny/lightline.vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -74,7 +75,9 @@ if has('gui_running')
 	if has("gui_gtk2")
 		set guifont=Mensch\ 11
 	elseif has("gui_win32")
-		set guifont=Mensch:h10:cANSI
+		"set guifont=Mensch:h10:cANSI
+		set guifont=Iosevka:h12
+
 	endif
 else
     set background=dark
@@ -104,6 +107,8 @@ vnoremap <C-k> {
 nnoremap <F5> :make<CR>
 nnoremap <F9> :cp<CR>
 nnoremap <F10> :cn<CR>
+nnoremap f<tab> za
+nnoremap f<C-j> <C-v>}kzf
 
 function! DefInSecondWindow()
 	let wordUnderCursor = expand("<cword>")
@@ -118,8 +123,8 @@ endfunction
 
 nnoremap <silent><leader>s :call DefInSecondWindow()<CR>
 
-let g:airline_powerline_fonts=0
-let g:airline#extensions#tabline#enabled=1
+"let g:airline_powerline_fonts=0
+"let g:airline#extensions#tabline#enabled=1
 "let g:airline#extensions#tabline#left_sep = '»'
 "let g:airline#extensions#tabline#left_alt_sep = '»'
 
@@ -146,10 +151,13 @@ let g:airline#extensions#tabline#enabled=1
 set t_Co=256
 set background=dark
 
-let g:airline_theme='base16'
+"let g:airline_theme='tender'
+let g:lightline = { 'colorscheme' : 'tender' }
 let base16colorspace=256  " Access colors present in 256 colorspace
-colorscheme base16-ashes
+colorscheme tender
 set backspace=indent,eol,start
+
+
 
 "let SuperTabDefaultCompletionType = '<C-Tab>'
 "let g:UltiSnipsExpandTrigger="<c-s>"
@@ -160,3 +168,5 @@ set lines=1000
 set columns=1000
 let g:autoclose_on = 0
 nmap <c-f> :CtrlPTag<cr>
+
+set encoding=utf-8
