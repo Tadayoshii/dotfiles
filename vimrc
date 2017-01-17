@@ -152,8 +152,8 @@ set t_Co=256
 set background=dark
 
 "let g:airline_theme='tender'
-let g:lightline = { 'colorscheme' : 'tender' }
-let base16colorspace=256  " Access colors present in 256 colorspace
+let g:lightline = { 'colorscheme' : 'seoul256' }
+"let base16colorspace=256  " Access colors present in 256 colorspace
 colorscheme tender
 set backspace=indent,eol,start
 
@@ -170,3 +170,5 @@ let g:autoclose_on = 0
 nmap <c-f> :CtrlPTag<cr>
 
 set encoding=utf-8
+
+hi LineNr ctermfg=blue ctermbg=black 
