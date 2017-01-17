@@ -17,6 +17,10 @@ vim +PluginInstall +qall
 
 #Xressources
 
+#termite
+mkdir -p ~/.config/termite
+ln -s termite.conf ~/.config/termite/config
+
 #xinit
 #bashrc
 

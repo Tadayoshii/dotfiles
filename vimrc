@@ -41,6 +41,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jacoborus/tender.vim'
 Plugin 'itchyny/lightline.vim'
+Plugin 'octol/vim-cpp-enhanced-highlight'
 call vundle#end()
 filetype plugin indent on
 
@@ -152,8 +153,15 @@ set t_Co=256
 set background=dark
 
 "let g:airline_theme='tender'
-let g:lightline = { 'colorscheme' : 'seoul256' }
-"let base16colorspace=256  " Access colors present in 256 colorspace
+let g:lightline = {
+      \ 'colorscheme': 'jellybeans',
+      \ 'component': {
+      \   'readonly': '%{&readonly?"⭤":""}',
+      \ },
+      \ 'separator': { 'left': '', 'right': '' },
+      \ 'subseparator': { 'left': '', 'right': '' }
+      \ }
+let base16colorspace=256  " Access colors present in 256 colorspace
 colorscheme base16-ashes 
 set backspace=indent,eol,start
 
@@ -169,7 +177,11 @@ set columns=1000
 let g:autoclose_on = 0
 nmap <c-f> :CtrlPTag<cr>
 
-hi LineNr ctermfg=blue ctermbg=black 
+hi CursorLineNr ctermbg=black ctermfg=blue
+hi Search ctermfg=black ctermbg=green
+hi LineNr ctermfg=white ctermbg=black 
+hi Pmenu ctermbg=yellow ctermfg=black
+hi PmenuSel ctermbg=white ctermfg=black
 
 set encoding=utf-8
 
