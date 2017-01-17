@@ -19,7 +19,7 @@ vim +PluginInstall +qall
 
 #termite
 mkdir -p ~/.config/termite
-ln -s termite.conf ~/.config/termite/config
+ln -s $HOME/dotfiles/termite.conf ~/.config/termite/config
 
 #xinit
 #bashrc
