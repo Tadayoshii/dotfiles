@@ -8,6 +8,8 @@ else
 	set rtp+=~/.vim/bundle/Vundle.vim
 	call vundle#begin()
 endif
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/vim-easymotion'
@@ -41,7 +43,6 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jacoborus/tender.vim'
 Plugin 'itchyny/lightline.vim'
-Plugin 'octol/vim-cpp-enhanced-highlight'
 call vundle#end()
 filetype plugin indent on
 
@@ -62,6 +63,7 @@ set mouse=a
 set relativenumber 
 syntax on
 
+set nowrap
 set noerrorbells visualbell t_vb=
 if has('autocmd')
   autocmd GUIEnter * set visualbell t_vb=
@@ -178,7 +180,7 @@ let g:autoclose_on = 0
 nmap <c-f> :CtrlPTag<cr>
 
 hi CursorLineNr ctermbg=black ctermfg=blue
-hi Search ctermfg=black ctermbg=green
+"hi Search ctermfg=black ctermbg=green
 hi LineNr ctermfg=white ctermbg=black 
 hi Pmenu ctermbg=yellow ctermfg=black
 hi PmenuSel ctermbg=white ctermfg=black
