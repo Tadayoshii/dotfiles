@@ -8,6 +8,22 @@ else
 	set rtp+=~/.vim/bundle/Vundle.vim
 	call vundle#begin()
 endif
+
+if &term =~ "xterm"
+	 "256 colors
+	let &t_Co = 256
+	 "restore screen after quitting
+	let &t_ti = "\<Esc>7\<Esc>[r\<Esc>[?47h"
+	let &t_te = "\<Esc>[?47l\<Esc>8"
+	if has("terminfo")
+		let &t_Sf = "\<Esc>[3%p1%dm"
+		let &t_Sb = "\<Esc>[4%p1%dm"
+	else
+		let &t_Sf = "\<Esc>[3%dm"
+		let &t_Sb = "\<Esc>[4%dm"
+	endif
+endif
+
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
@@ -156,15 +172,16 @@ set background=dark
 
 "let g:airline_theme='tender'
 let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
-      \ 'component': {
-      \   'readonly': '%{&readonly?"⭤":""}',
-      \ },
-      \ 'separator': { 'left': '', 'right': '' },
-      \ 'subseparator': { 'left': '', 'right': '' }
-      \ }
-let base16colorspace=256  " Access colors present in 256 colorspace
-colorscheme base16-ashes 
+			\ 'colorscheme': 'seoul256',
+			\ 'component': {
+			\   'readonly': '%{&readonly?"⭤":""}',
+			\ },
+			\ 'separator': { 'left': '', 'right': '' },
+			\ 'subseparator': { 'left': '', 'right': '' }
+			\ }
+"colorscheme gruvbox 
+"let base16colorspace=256  " Access colors present in 256 colorspace
+""colorscheme base16-ashes 
 set backspace=indent,eol,start
 
 
