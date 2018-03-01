@@ -21,6 +21,7 @@ vim +PluginInstall +qall
 mkdir -p ~/.config/termite
 ln -s $HOME/dotfiles/termite.conf ~/.config/termite/config
 ln -s $HOME/dotfiles/.tmux.conf ~/.tmux.conf
+ln -s $HOME/dotfiles/.tmux-themepack ~/.tmux-themepack
 
 #xinit
 #bashrc
